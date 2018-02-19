@@ -1,0 +1,15 @@
+<div class="wrapper">
+  <mat-card *ngIf="episode; else loadingBlock">
+    <mat-card-header>
+      <mat-card-title>{{ episode.name }}</mat-card-title>
+      <mat-card-subtitle>Season: {{ episode.season }} Episode: {{ episode.sequenceNumber }}</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+  <ng-template #loadingBlock>
+    <mat-spinner></mat-spinner>
+  </ng-template>
+  <div class="button-wrapper">
+    <button mat-button (click)="randomize()" color="primary" mat-raised-button>Randomize</button>
+  </div>
+</div>
+    
