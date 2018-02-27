@@ -1,0 +1,6 @@
+{
+    "/login": {
+      "target": "https://api.thetvdb.com",
+      "secure": false
+    }
+  }
