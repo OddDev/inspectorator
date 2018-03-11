@@ -1,6 +1,6 @@
 {
-    "/login": {
-      "target": "https://api.thetvdb.com",
+    "/episodes": {
+      "target": "https://inspectorator.jut.sh",
       "secure": false
     }
   }

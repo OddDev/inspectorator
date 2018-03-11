@@ -1,15 +1,25 @@
-<div class="wrapper">
+<div class="wrapper" (window:resize)="onResize($event)">
   <mat-card *ngIf="episode; else loadingBlock">
     <mat-card-header>
       <mat-card-title>{{ episode.name }}</mat-card-title>
-      <mat-card-subtitle>Season: {{ episode.season }} Episode: {{ episode.sequenceNumber }}</mat-card-subtitle>
+      <mat-card-subtitle *ngIf="episode.season || episode.sequenceNumber">Season: {{ episode.season }} Episode: {{ episode.sequenceNumber }}</mat-card-subtitle>
     </mat-card-header>
+    <mat-card-content *ngIf="episode.description">
+      {{ episode.description }}
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button ngxClipboard [cbContent]="episode.name" (cbOnSuccess)="doCopySuccess()">COPY</button>
+    </mat-card-actions>
   </mat-card>
   <ng-template #loadingBlock>
     <mat-spinner></mat-spinner>
   </ng-template>
-  <div class="button-wrapper">
-    <button mat-button (click)="randomize()" color="primary" mat-raised-button>Randomize</button>
+  <div class="button-wrapper" *ngIf="!isMobile">
+    <button mat-fab (click)="randomize()" color="accent">
+      <mat-icon>refresh</mat-icon>
+    </button>
   </div>
 </div>
-    
+<button *ngIf="isMobile" mat-fab (click)="randomize()" color="accent" class="global-fab-button">
+    <mat-icon>refresh</mat-icon>
+</button>

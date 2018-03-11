@@ -6,13 +6,5 @@ import { TvdbAuthentificatorService } from './tvdb-authentificator.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  
-  constructor(private tvdbAuthentificationService: TvdbAuthentificatorService) {
-  }
-
-  ngOnInit() {
-    console.log(this.tvdbAuthentificationService.jwt);
-  }
-
+export class AppComponent {
 }
