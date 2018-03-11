@@ -7,6 +7,8 @@
 mat-card {
     margin-top: 1em;
     max-width: 600px;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
 .button-wrapper {
@@ -18,6 +20,52 @@ mat-card {
 
 .global-fab-button {
     position: fixed;
-    right: 1em;
-    bottom: 2em;
+    right: 1.5em;
+    bottom: 4em;
+}
+
+.load-wrapp {
+    margin-top: 150px;
+}
+
+.spinner {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.bubble-1,
+.bubble-2 {
+    position: absolute;
+    top: 0;
+    width: 25px;
+    height: 25px;
+}
+
+.bubble-content {
+    font-size: 4em;
+}
+
+.bubble-2 {
+    top: auto;
+    bottom: 0;
+}
+
+.load-wrapp .spinner {animation: loadingI 2s linear infinite;}
+.load-wrapp  .bubble-1, .load-wrapp .bubble-2 {animation: bounce 2s ease-in-out infinite;}
+.load-wrapp  .bubble-2 {animation-delay: -1.0s;}
+
+@keyframes loadingI {
+    100% {transform: rotate(360deg);}
+}
+
+@keyframes bounce  {
+    0%, 100% {transform: scale(0.0);}
+    50% {transform: scale(1.0);}
+}
+
+
+.loading-message {
+    font-family: Roboto;
 }
