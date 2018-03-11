@@ -1,0 +1,6 @@
+{
+    "/episodes": {
+      "target": "https://inspectorator.jut.sh",
+      "secure": false
+    }
+  }

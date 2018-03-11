@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <mat-toolbar-row>
+  <mat-toolbar-row  class="mat-elevation-z2">
     <span>Inspectorator</span>
     <span class="spacer"></span>
     <div class="info-buttons">
@@ -11,9 +11,13 @@
       </a>
     </div>
   </mat-toolbar-row>
+  <mat-toolbar-row>
+  </mat-toolbar-row>
+  <mat-toolbar-row class="mat-elevation-z1">
+  </mat-toolbar-row>
 </mat-toolbar>
 <div class="centralizer">
-  <div class="content-wrapper">
+  <div class="content-wrapper general-max-width">
     <router-outlet></router-outlet>
   </div>
 </div>

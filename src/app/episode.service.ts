@@ -1,28 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Episode } from "./episode";
-import { EPISODES } from "./episodes-data";
 import { of } from 'rxjs/observable/of';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class EpisodeService {
 
   private _lastRandom: number;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getRandomEpisode(): Observable<Episode> {
-    return of(EPISODES[this._generateRandom()]);
-  }
-
-  getEpisodeCountOfSeason(season: number): Observable<number> {
-    return of(EPISODES.filter(episode => episode.season === season).length);
-  }
-
-  private _generateRandom(): number {
-    const random = Math.floor(Math.random() * EPISODES.length);
-    this._lastRandom = random === this._lastRandom ? this._generateRandom() : random;
-    return random;
+    return this.http.get<Episode>('episodes/random');
   }
 
 }
