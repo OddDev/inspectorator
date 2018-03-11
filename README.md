@@ -1,6 +1,7 @@
-# RandomInspectorator
+# Inspectorator
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.7.
+https://inspectorator.jut.sh/ running live. Works together with the backend: https://github.com/OddDev/inspectorator-api
 
 ## Development server
 
